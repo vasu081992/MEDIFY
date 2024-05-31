@@ -1,6 +1,7 @@
 import React, { useEffect , useState } from 'react'
 import axios from 'axios'
 import styles from "./Search.module.css"
+import { useNavigate } from "react-router-dom";
 
 
 function Search() {
@@ -11,6 +12,7 @@ function Search() {
         city:''
     })
     const [cities,setCities]= useState([])
+    const navigate = useNavigate();
 
     console.log("state chosen", formData.state);
 
@@ -24,7 +26,7 @@ function Search() {
     let url =  'https://meddata-backend.onrender.com/states';
     let response =await axios.get(url);
     let data= await response
-setStates(data.data)
+    setStates(data.data)
     }
     fetchStates()
 },[])
@@ -57,8 +59,15 @@ const handleStateChangeCity =(e)=>{
         city: e.target.value
     })
 }
+
+const handleSubmit = ()=>{
+
+    if(formData.state && formData.city){
+        navigate(`/search?state=${formData.state}&city=${formData.city}`);
+    }
+}
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
  
  <label for="states">State:</label>
  <select name="states" id="states" className={styles.select} onChange={handleStateChange} value={formData.state}>
@@ -86,8 +95,8 @@ const handleStateChangeCity =(e)=>{
 
 </select>
 
-<button> Search </button>
-    </div>
+<button type="submit"> Search </button>
+    </form>
   )
 
 
