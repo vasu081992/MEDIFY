@@ -1,0 +1,12 @@
+
+.heroblock {
+
+    background: linear-gradient(47deg, #E8F1FF 0%, #E7F0FF 100%); 
+    width:100%vw;
+    height:882px;
+
+}
+
+.herotext{
+    font-family: "Poppins";
+}
