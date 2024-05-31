@@ -53,6 +53,7 @@ const handleStateChange =(e)=>{
 
 const handleStateChangeCity =(e)=>{
     setformData({
+        ...formData,
         city: e.target.value
     })
 }
@@ -84,8 +85,12 @@ const handleStateChangeCity =(e)=>{
  }
 
 </select>
+
+<button> Search </button>
     </div>
   )
+
+
 }
 
 
