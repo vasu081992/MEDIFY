@@ -21,9 +21,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-//import Search from "./Search/Search";
+import SearchFull from "./components/FullSearch/SearchFull";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-//import Home from "./Home/Home";
+import Home from "./components/Home/Home";
 import { createTheme, ThemeProvider } from "@mui/material";
 //import MyBookings from "./MyBookings/MyBookings";
 
@@ -32,18 +32,18 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      // {
-      //   path: "search",
-      //   element: <Search />,
-      // },
+       {
+         path: "search",
+         element: <SearchFull/>,
+       },
       // {
       //   path: "my-bookings",
       //   element: <MyBookings />,
       // },
-      // {
-      //   path: "/",
-      //   element: <Home />,
-      // },
+      {
+         path: "/",
+         element: <Home />,
+       },
     ],
   },
 ]);

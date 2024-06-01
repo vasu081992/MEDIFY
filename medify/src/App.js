@@ -1,15 +1,11 @@
 import './App.css';
-import NavBar from './components/navbar/navbar';
-import HeroSlider from './components/HeroSection/Hero';
-import Search from './components/Search/Search';
-
+import { Outlet } from "react-router-dom";
+//import { CssBaseline } from "@mui/material";
 
 function App() {
   return (
     <div className="App">
-     <NavBar/>
-     <HeroSlider/>
-     <Search/>
+    <Outlet />
     </div>
   );
 }
