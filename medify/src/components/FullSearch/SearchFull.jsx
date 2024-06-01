@@ -3,11 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import HospitalCard from "../HospitalCard/HospitalCard";
-//import icon from "../assets/assets/tick.png";
-//import cta from "../assets/assets/cta.png";
+
+import icon from "../../assets/assets/tick.png"
+import cta from "../../assets/assets/cta.png"
+
 import SearchHospital from "../SearchHospital/SearchHospital";
-// import BookingModal from "../components/BookingModal/BookingModal";
-// import AutohideSnackbar from "../components/AutohideSnackbar/AutohideSnackbar";
+import BookingModal from "../BookingModal/BookingModal";
+ import AutohideSnackbar from "../AutohideSnackbar/AutohideSnackbar";
 import NavBar from "../navbar/navbar";
 
 
@@ -23,13 +25,17 @@ export default function SearchFull() {
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({});
-  // const [showBookingSuccess, setShowBookingSuccess] = useState(false);
+   const [showBookingSuccess, setShowBookingSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   console.log("state and city - state",state)
 
 
   console.log("state and city - city",city)
+
+
+  console.log("hospitals",hospitals)
+
 
   //API to fetch hospitals based on state and city selection 
   // useEffect(() => {
@@ -145,7 +151,7 @@ export default function SearchFull() {
                 </span>
               </Typography>
               <Stack direction="row" spacing={2}>
-                {/* <img src={icon} height={24} width={24} alt="icon" /> */}
+                 <img src={icon} height={24} width={24} alt="icon" /> 
                 <Typography color="#787887" lineHeight={1.4}>
                   Book appointments with minimum wait-time & verified doctor
                   details
@@ -184,22 +190,22 @@ export default function SearchFull() {
               )}
             </Stack>
 
-            {/* <img src={cta} width={360} height="auto" alt="banner" /> */}
+            <img src={cta} width={360} height="auto" alt="banner" />
           </Stack>
         </Container>
 
-        {/* <BookingModal
+        <BookingModal
           open={isModalOpen}
           setOpen={setIsModalOpen}
           bookingDetails={bookingDetails}
           showSuccessMessage={setShowBookingSuccess}
-        /> */}
+        />
 
-        {/* <AutohideSnackbar
+        <AutohideSnackbar
           open={showBookingSuccess}
           setOpen={setShowBookingSuccess}
           message="Booking Successful"
-        /> */}
+        />
       </Box>
     </>
   );

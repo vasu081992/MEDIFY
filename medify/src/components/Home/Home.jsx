@@ -5,6 +5,15 @@ import NavBar from "../navbar/navbar";
 import HeroServices from "../IconLayout/HeroServices";
 import HeroSlider from "../HeroSection/Hero";
 
+import FAQs from "../Sections/FAQs/FAQs";
+import OurFamilies from "../Sections/OurFamilies/OurFamilies";
+import Blogs from "../Sections/Blogs/Blogs";
+import PatientCaring from "../Sections/PatientCaring/PatientCaring";
+import Specialists from "../Sections/Specialists/Specialists";
+import Specialization from "../Sections/Specialization/Specialization";
+import Offers from "../Sections/Offers/Offers";
+
+
 export default function Home() {
   return (
     <Box>
@@ -33,6 +42,21 @@ export default function Home() {
           </Stack>
         </Container>
       </Box>
+      <Offers />
+
+      <Specialization />
+
+      <Specialists />
+
+      <PatientCaring />
+
+      <Blogs />
+
+      <OurFamilies />
+
+      <FAQs />
     </Box>
+
+
   );
 }

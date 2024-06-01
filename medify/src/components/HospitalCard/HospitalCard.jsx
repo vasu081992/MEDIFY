@@ -1,7 +1,7 @@
 import icon from "../../assets/assets/hospitalicon.png";
 import { Box, Button, Chip, Divider, Stack, Typography } from "@mui/material";
 import thumb from "../../assets/assets/thumbsup.png";
-//import Calendar from "../Calendar/Calendar";
+import Calendar from "../Calendar/Calendar";
 import { useState } from "react";
 import { format } from "date-fns";
 
@@ -147,13 +147,13 @@ export default function HospitalCard({
         </Stack>
       </Stack>
 
-      {/* {showCalendar && (
+      {showCalendar && (
         <Calendar
           details={details}
           availableSlots={availableSlots}
           handleBooking={handleBooking}
         />
-      )} */}
+      )}
     </Box>
   );
 }
